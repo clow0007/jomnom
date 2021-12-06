@@ -8,6 +8,7 @@ import { MapComponent } from './map/map.component';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantCardComponent } from './restaurant-list/restaurant-card/restaurant-card.component';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
     MapComponent,
     RestaurantListComponent,
     RestaurantCardComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
