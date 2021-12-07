@@ -6,5 +6,7 @@ export const CATEGORIES: Category[] = [
   { name: 'Indian ' },
   { name: 'Chinese' },
   { name: 'Mamak' },
-  { name: 'Japanese' }
+  { name: 'Japanese' },
+  { name: 'Korean' },
+  { name: 'Arabic' }
 ]
