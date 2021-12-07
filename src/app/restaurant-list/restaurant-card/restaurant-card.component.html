@@ -1,8 +1,11 @@
-<div class="card">
+<div *ngFor="let restaurant of restaurants" class="card">
   <img src="../../../assets/horse.jpg" style="height: 65px">
   <div class="card-body">
-    <h6 class=card-title>
-      Restaurant horse
+    <h6 class=card-title onload="javascript:getRating(numberOfStars)">
+      {{restaurant.name}}
+      <!-- <div id="rating">
+        {{restaurant.rating}}
+      </div> -->
       <i class="bi bi-star-fill"></i>
       <i class="bi bi-star-fill"></i>
       <i class="bi bi-star-fill"></i>
@@ -10,12 +13,24 @@
       <i class="bi bi-star-fill"></i>
     </h6>
     <div class="category">
-      Dine in • Take away
+      {{restaurant.category}}
     </div>
+    <a href="#" class="stretched-link"></a>
   </div>
 </div>
 
-<div class="card">
+<script>
+  function getRating(numberOfStars) {
+    var icon = "";
+    alert("happens")
+    console.log("hello")
+    // (document.getElementById("rating"));
+    for (let i = 0; i < 5; i++) {
+
+    }
+  }
+</script>
+<!-- <div class="card">
   <img src="../../../assets/restaurant_1.jpg" style="height: 65px">
   <div class="card-body">
     <h6 class=card-title>
@@ -30,8 +45,8 @@
       Dine in • Take away • Delivery
     </div>
   </div>
-  <!-- <div style="justify-content: end; align-items: flex-end;"> -->
-  <!-- </div> -->
+  <div style="justify-content: end; align-items: flex-end;">
+  </div>
 </div>
 
 <div class="card">
@@ -49,4 +64,4 @@
       Dine in • Take away • Delivery
     </div>
   </div>
-</div>
+</div> -->

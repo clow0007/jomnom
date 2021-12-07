@@ -9,6 +9,8 @@ import { RestaurantListComponent } from './restaurant-list/restaurant-list.compo
 import { RestaurantCardComponent } from './restaurant-list/restaurant-card/restaurant-card.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { MainComponent } from './main/main.component';
+import { RestaurantOverviewComponent } from './restaurant-overview/restaurant-overview.component';
+import { RestaurantReviewComponent } from './restaurant-review/restaurant-review.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MainComponent } from './main/main.component';
     RestaurantListComponent,
     RestaurantCardComponent,
     CategoryListComponent,
-    MainComponent
+    MainComponent,
+    RestaurantOverviewComponent,
+    RestaurantReviewComponent
   ],
   imports: [
     BrowserModule,
