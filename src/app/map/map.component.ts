@@ -18,29 +18,31 @@ export class MapComponent implements OnInit {
   }
 
   initMap(): void {
-    this.map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 6,
-    });
+    const mapProperties = {
+      center: new google.maps.LatLng(35.2271, -80.8431),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
     this.infoWindow = new google.maps.InfoWindow();
-  
+
     const locationButton = document.createElement("button");
-  
+
     locationButton.textContent = "Pan to Current Location";
     locationButton.classList.add("custom-map-control-button");
-  
+
     this.map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-  
+
     locationButton.addEventListener("click", () => {
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-          (position: GeolocationPosition) => {
+          (position: Position) => {
             const pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             };
-  
+
             this.infoWindow.setPosition(pos);
             this.infoWindow.setContent("Location found.");
             this.infoWindow.open(this.map);
