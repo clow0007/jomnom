@@ -1,14 +1,46 @@
-<div class="card">
-<div class="modal-body">
+<!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="review-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+</ul>
+<div class="tab-content" aria-labelledby="review-tab">
   <p class="opening">Opening Hours:</p>
   <p>Mon-Sat</p>
-  <p class="serve">Serving:</p>
-  <p>Breakfast - Lunch - Dinner</p>
-  <p class="cuisine">Cuisine:</p>
-  <p>Indian - Malay</p>
-  <p class="telephone">Telephone:</p>
-  <p>03-1234 5678</p>
-  <p class="album">Album:</p>
-  <img src="../../assets/restaurant_1.jpg" style="height: 50px;">
 </div>
+ -->
+ <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Overview</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Review</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="tab-content" aria-labelledby="overview-tab">
+      <div class="card">
+        <p class="opening">Opening Hours:</p>
+        <p>Mon-Sat</p>
+        <p class="serve">Serving:</p>
+        <p>Breakfast - Lunch - Dinner</p>
+        <p class="cuisine">Cuisine:</p>
+        <p>Indian - Malay</p>
+        <p class="telephone">Telephone:</p>
+        <p>03-1234 5678</p>
+        <p class="album">Album:</p>
+        <img src="../../assets/restaurant_1.jpg" style="height: 100px; width: 100%;">
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">review</div>
 </div>
+
+<script>
+  $('#pills-tab a[href="#pills-home"]').tab('show') // Select tab by name
+  $('#pills-tab a[href="#pills-profile"').tab('show') // Select first tab
+  $('#pills-tab a[href="#pills-contact"').tab('show') // Select last tab
+</script>
