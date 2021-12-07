@@ -18,7 +18,7 @@ export class RestaurantCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  chooseRestaurant(): void {
-    alert();
+  chooseRestaurant(restaurant: Restaurant): void {
+    alert("Chosen " + restaurant.name);
   }
 }
