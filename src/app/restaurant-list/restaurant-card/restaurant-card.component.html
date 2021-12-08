@@ -4,15 +4,15 @@
   </div>
 </div>
 <form class="d-flex">
-  <div style="position:absolute; left:55%; top:24%;" >
+  <div style="position:absolute; left:55%; top:22%;" >
     <input class="form-control" style="background-color:rgb(212, 221, 212)" type="text" [(ngModel)]="searchTerm" placeholder="Search Location or Food" size="60%" #searchName>
   </div>
   <div style="position:relative; left:75%; top:100%"  >
     <button class="btn btn-success" type="submit" (click)="submitFilter(searchName.value); searchName.value=''">Search</button>
   </div>
 </form>
-<div *ngFor="let restaurant of restaurants | filter:searchTerm" class="card">
-  <img src="../../../assets/images/horse.jpg" style="height: 65px">
+<div *ngFor="let restaurant of restaurants | filter:searchTerm" class="card" style="width: 49%; margin: 2px">
+  <img [src]="restaurant.image" style="height: 65px">
   <div class="card-body">
     <h6 class="card-title">
       {{restaurant.name}}

@@ -3,5 +3,5 @@ export interface Restaurant {
   category: string;
   rating: number;
   cuisine: Array<string>;
-  // image: string;
+  image: string;
 }
