@@ -13,6 +13,7 @@ import { RestaurantOverviewComponent } from './restaurant-overview/restaurant-ov
 import { RestaurantReviewComponent } from './restaurant-review/restaurant-review.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
+import { NgxWheelModule } from 'ngx-wheel';
 // import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    NgxWheelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
