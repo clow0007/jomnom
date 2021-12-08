@@ -32,7 +32,9 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    NgxWheelModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
