@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {} from 'googlemaps';
+import {ApiService} from "../api.service";
 
 @Component({
   selector: 'app-map',
@@ -10,8 +11,9 @@ export class MapComponent implements OnInit {
   @ViewChild('map', {static: true}) mapElement: any;
   map: google.maps.Map;
   infoWindow: google.maps.InfoWindow
+  position: any = null;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.initMap();
@@ -26,38 +28,35 @@ export class MapComponent implements OnInit {
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
     this.infoWindow = new google.maps.InfoWindow();
 
-    const locationButton = document.createElement("button");
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position: Position) => {
+          this.position = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          this.apiService.fetchNearby(this.position.lat, this.position.lng).
+          subscribe(response =>{
+            console.log(response);
+          });
+          this.infoWindow.setPosition(this.position);
+          this.infoWindow.setContent("Location found.");
+          this.infoWindow.open(this.map);
+          this.map.setCenter(this.position);
+        },
+        () => {
+          this.handleLocationError(true, this.infoWindow, this.map.getCenter()!);
+        }
+      );
+    } else {
+      // Browser doesn't support Geolocation
+      this.handleLocationError(false, this.infoWindow, this.map.getCenter()!);
+    }
 
-    locationButton.textContent = "Pan to Current Location";
-    locationButton.classList.add("custom-map-control-button");
 
-    this.map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-
-    locationButton.addEventListener("click", () => {
-      // Try HTML5 geolocation.
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position: Position) => {
-            const pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            };
-
-            this.infoWindow.setPosition(pos);
-            this.infoWindow.setContent("Location found.");
-            this.infoWindow.open(this.map);
-            this.map.setCenter(pos);
-          },
-          () => {
-            this.handleLocationError(true, this.infoWindow, this.map.getCenter()!);
-          }
-        );
-      } else {
-        // Browser doesn't support Geolocation
-        this.handleLocationError(false, this.infoWindow, this.map.getCenter()!);
-      }
-    });
   }
+
+
 
   handleLocationError(
     browserHasGeolocation: boolean,
