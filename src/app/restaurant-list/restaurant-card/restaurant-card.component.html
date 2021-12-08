@@ -4,10 +4,10 @@
   </div>
 </div>
 <form class="d-flex">
-  <div style="position:relative; left:5%; top:40%" >
-    <input class="form-control" type="text" [(ngModel)]="searchTerm" placeholder="Search Location or Food" size="100%" #searchName>
+  <div style="position:absolute; left:55%; top:24%;" >
+    <input class="form-control" style="background-color:rgb(212, 221, 212)" type="text" [(ngModel)]="searchTerm" placeholder="Search Location or Food" size="60%" #searchName>
   </div>
-  <div style="position:relative; right:5%; top:35%"  >
+  <div style="position:relative; left:75%; top:100%"  >
     <button class="btn btn-success" type="submit" (click)="submitFilter(searchName.value); searchName.value=''">Search</button>
   </div>
 </form>
