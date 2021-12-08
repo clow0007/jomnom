@@ -6,6 +6,8 @@ import { RESTAURANTS } from '../mock-data/mock-restaurants';
 import { Observable, of } from 'rxjs';
 import { SearchService } from './search.service';
 
+import Swal from 'sweetalert2';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +21,11 @@ export class RestaurantService {
   }
 
   chooseRestaurant(restaurant: Restaurant): void {
-    alert("Chosen: " + restaurant.name + " " + this.searchService.getSearchData());
+    Swal.fire({
+      title: 'Alert',
+      text: 'Chosen ' + restaurant.name,
+      icon: 'success',
+      confirmButtonColor: 'Cool'
+    })
   }
 }
