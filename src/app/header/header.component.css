@@ -1,9 +1,10 @@
 .navbar{
-    background-color: rgb(243, 233, 233);
+    background-color: rgb(185, 218, 195);
     justify-content: center;
 }
 
 .title {
-  font-size: 40px;
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
