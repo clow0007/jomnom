@@ -14,7 +14,7 @@ import { RestaurantReviewComponent } from './restaurant-review/restaurant-review
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { NgxWheelModule } from 'ngx-wheel';
-import {HttpClientModule} from "@angular/common/http";
+// import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import {HttpClientModule} from "@angular/common/http";
     MainComponent,
     RestaurantOverviewComponent,
     RestaurantReviewComponent,
+    // HttpClientModule
   ],
   imports: [
     BrowserModule,
