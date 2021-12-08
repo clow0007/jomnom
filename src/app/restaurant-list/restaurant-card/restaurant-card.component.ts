@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import { Restaurant } from '../../restaurant';
-import { RESTAURANTS } from '../../mock-restaurants';
+import { Restaurant } from '../../interface/restaurant';
+
+import { RestaurantService } from '../../services/restaurant.service';
+import { SearchService } from '../../services/search.service';
+
+import { Category } from '../../interface/category';
+import { CATEGORIES } from '../../mock-data/mock-category';
 
 @Component({
   selector: 'app-restaurant-card',
@@ -9,16 +15,35 @@ import { RESTAURANTS } from '../../mock-restaurants';
   styleUrls: ['./restaurant-card.component.css']
 })
 export class RestaurantCardComponent implements OnInit {
-  // restaurants: Restaurant[] = [];
+  restaurants: Restaurant[] = [];
+  categories = CATEGORIES;
+  searchTerm: string = '';
 
-  restaurants = RESTAURANTS;
-
-  constructor() { }
+  constructor(private restaurantService: RestaurantService, public searchService: SearchService) {
+   }
 
   ngOnInit(): void {
+    this.getRestaurants();
   }
 
-  chooseRestaurant(restaurant: Restaurant): void {
-    alert("Chosen " + restaurant.name);
+  // // Search result of user's input
+  // search(name: string): void {
+  //   name = name.trim();
+  //   this.searchService.setSearchData(name);
+  //   alert(name);
+  // }
+
+  getRestaurants(): void {
+    this.restaurantService.getRestaurants()
+      .subscribe(restaurants => this.restaurants = restaurants);
+  }
+
+  submitFilter(name: string): void {
+    this.searchTerm = name;
+  }
+
+  // Category searching
+  clickCategory(category: Category) {
+    this.searchTerm = category.name;
   }
 }

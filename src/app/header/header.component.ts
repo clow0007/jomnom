@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SearchService } from '../services/search.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public searchService: SearchService) { }
 
   ngOnInit(): void {
   }
@@ -15,6 +17,7 @@ export class HeaderComponent implements OnInit {
   // Search result of user's input
   search(name: string): void {
     name = name.trim();
+    this.searchService.setSearchData(name);
     alert(name);
   }
 

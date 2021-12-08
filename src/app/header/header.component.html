@@ -14,7 +14,7 @@
         <input class="form-control" type="search" placeholder="Search Location or Food" aria-label="Search" size="100%"  #searchName>
       </div>
       <div style="position:relative; right:5%; top:35%"  >
-        <button class="btn btn-success" type="submit" (click)="search(searchName.value); searchName.value=''">Search</button>
+        <button class="btn btn-success" type="submit" (click)="searchService.search(searchName.value); searchName.value=''">Search</button>
       </div>
     </form>
   </div>

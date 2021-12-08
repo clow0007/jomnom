@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Category } from '../category';
-import { CATEGORIES } from '../mock-category';
+import { Category } from '../interface/category';
+import { CATEGORIES } from '../mock-data/mock-category';
 
 @Component({
   selector: 'app-category-list',
@@ -15,6 +15,10 @@ export class CategoryListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clickCategory(category: Category) {
+    alert(category.name);
   }
 
 }

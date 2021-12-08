@@ -11,6 +11,9 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { MainComponent } from './main/main.component';
 import { RestaurantOverviewComponent } from './restaurant-overview/restaurant-overview.component';
 import { RestaurantReviewComponent } from './restaurant-review/restaurant-review.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
+// import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,14 @@ import { RestaurantReviewComponent } from './restaurant-review/restaurant-review
     CategoryListComponent,
     MainComponent,
     RestaurantOverviewComponent,
-    RestaurantReviewComponent
+    RestaurantReviewComponent,
+    // HttpClientModule
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

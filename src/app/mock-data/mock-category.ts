@@ -1,4 +1,4 @@
-import { Category } from "./category";
+import { Category } from "../interface/category";
 
 export const CATEGORIES: Category[] = [
   { name: 'Western' },
