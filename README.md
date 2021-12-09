@@ -1,10 +1,10 @@
 # Jomnom
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4. The project is a food searching web application designed to promote restaurants to users with gamification elements. This project is currently maintained by Tan Per Hoong, Low Chern Wey Joshua, Julian Yong, Yong Zi Qian,
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. Another alternative to access this web application is through this link: https://jomnom.pages.dev/
 
 ## Code scaffolding
 
