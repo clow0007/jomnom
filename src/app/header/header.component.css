@@ -1,6 +1,12 @@
 .navbar{
     background-color: rgb(185, 218, 195);
     justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.navbar-brand{
+  padding: 0px;
 }
 
 .title {
