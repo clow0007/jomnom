@@ -14,7 +14,14 @@ import { RestaurantReviewComponent } from './restaurant-review/restaurant-review
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { NgxWheelModule } from 'ngx-wheel';
+import { HttpClientModule } from '@angular/common/http';
+import { FoodChallengeComponent } from './food-challenge/food-challenge.component';
+import { RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
+
+
 // import {HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -27,6 +34,7 @@ import { NgxWheelModule } from 'ngx-wheel';
     MainComponent,
     RestaurantOverviewComponent,
     RestaurantReviewComponent,
+    FoodChallengeComponent,
     // HttpClientModule
   ],
   imports: [
@@ -35,7 +43,8 @@ import { NgxWheelModule } from 'ngx-wheel';
     Ng2SearchPipeModule,
     FormsModule,
     NgxWheelModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

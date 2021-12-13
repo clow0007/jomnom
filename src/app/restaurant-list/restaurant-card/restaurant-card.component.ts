@@ -8,7 +8,7 @@ import { SearchService } from '../../services/search.service';
 
 import { Category } from '../../interface/category';
 import { CATEGORIES } from '../../mock-data/mock-category';
-
+import { Router } from '@angular/router';
 import { NgxWheelComponent } from 'ngx-wheel';
 import Swal from 'sweetalert2';
 
@@ -22,7 +22,7 @@ export class RestaurantCardComponent implements OnInit {
   categories = CATEGORIES;
   searchTerm: string = '';
 
-  constructor(private restaurantService: RestaurantService, public searchService: SearchService) {
+  constructor(private restaurantService: RestaurantService, public searchService: SearchService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -50,6 +50,10 @@ export class RestaurantCardComponent implements OnInit {
     this.searchTerm = category.name;
   }
 
+  navigate(){
+    this.router.navigate(['food-challenge']);  // define your component where you want to go
+  }
+
   // Open raffle
   openRaffle() {
     Swal.fire({
@@ -67,6 +71,7 @@ export class RestaurantCardComponent implements OnInit {
       focusConfirm: false,
     })
   }
+
 
   items = [
     {id: 1, text: 'Prize 1'},
