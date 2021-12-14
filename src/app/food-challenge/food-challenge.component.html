@@ -1,12 +1,4 @@
-<nav class="navbar">
-    <div class="d-flex flex-row">
-      <!-- <div class="p-1"> -->
-        <a class="navbar-brand">
-          <p class="title">Food Challenge</p>
-        </a>
-     
-    </div>
-</nav>
+<app-header></app-header>
 
 <div *ngFor="let foodChallenge of foodChallenges " class="card" style="width: 30%; margin: 20px" (click)="foodChallengeService.chooseChallenge(foodChallenge)">
   <div class="card-body">

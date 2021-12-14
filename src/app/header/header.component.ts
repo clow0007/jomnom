@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SearchService } from '../services/search.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { SearchService } from '../services/search.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public searchService: SearchService) { }
+  constructor(public searchService: SearchService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +25,9 @@ export class HeaderComponent implements OnInit {
   // Route to home page
   goToHome(): void {
     alert("Return to home page");
+  }
+
+  navigate(){
+    this.router.navigate(['food-challenge']);  // define your component where you want to go
   }
 }

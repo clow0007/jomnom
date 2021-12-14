@@ -4,8 +4,9 @@ import { FoodChallengeComponent } from './food-challenge/food-challenge.componen
 import {MainComponent} from "./main/main.component";
 
 const routes: Routes = [
-  {path: '', component: MainComponent, pathMatch: 'full'},
-  { path: 'food-challenge', component:FoodChallengeComponent },
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: MainComponent},
+  { path: 'food-challenge', component:FoodChallengeComponent},
 ];
 
 @NgModule({
