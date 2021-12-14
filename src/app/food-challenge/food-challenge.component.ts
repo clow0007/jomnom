@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Restaurant } from '../interface/restaurant';
 import { RestaurantService } from '../services/restaurant.service';
 import Swal from 'sweetalert2';
+import { FoodChallenge } from '../interface/food-challenge';
+import { FoodChallengeService } from '../services/food-challenge.service';
 
 @Component({
   selector: 'app-food-challenge',
@@ -10,11 +12,13 @@ import Swal from 'sweetalert2';
 })
 export class FoodChallengeComponent implements OnInit {
   restaurants: Restaurant[] = [];
+  foodChallenges: FoodChallenge[] = [];
 
-  constructor(private restaurantService: RestaurantService) { }
+  constructor(private restaurantService: RestaurantService, private foodChallengeService: FoodChallengeService) { }
 
   ngOnInit(): void {
-    this.getRestaurants();
+    // this.getRestaurants();
+    this.getFoodChallenges();
   }
 
   getRestaurants(): void {
@@ -22,25 +26,9 @@ export class FoodChallengeComponent implements OnInit {
       .subscribe(restaurants => this.restaurants = restaurants);
   }
 
-  chooseChallenge(): void{
-    Swal.fire({
-      title: '<strong>Food Challenge Detail</strong>',
-      icon: 'info',
-      html:
-        '<p><b>Collect 10 stamps to get 100 reward points\n </b></p> <p>*Spend RM20 to get one stamp</p>',
-      showCloseButton: true,
-      showCancelButton: false,
-      focusConfirm: false,
-      confirmButtonText:
-        'Accept',
-      // confirmButtonAriaLabel: 'Thumbs up, great!',
-      // cancelButtonText:
-      //   'Decline',
-      // cancelButtonAriaLabel: 'Thumbs down'
-    })
-    
+  getFoodChallenges(): void {
+    this.foodChallengeService.getFoodChallenges()
+      .subscribe(foodchallenges => this.foodChallenges = foodchallenges);
   }
-
-
 
 }
