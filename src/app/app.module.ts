@@ -16,11 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { NgxWheelModule } from 'ngx-wheel';
 import { HttpClientModule } from '@angular/common/http';
 import { FoodChallengeComponent } from './food-challenge/food-challenge.component';
-import { RouterModule } from '@angular/router';
-import { Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
-// import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -35,7 +32,6 @@ import { Routes } from '@angular/router';
     RestaurantOverviewComponent,
     RestaurantReviewComponent,
     FoodChallengeComponent,
-    // HttpClientModule
   ],
   imports: [
     BrowserModule,
@@ -44,7 +40,8 @@ import { Routes } from '@angular/router';
     FormsModule,
     NgxWheelModule,
     HttpClientModule,
-    
+    NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

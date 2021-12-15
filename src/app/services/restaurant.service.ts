@@ -4,7 +4,6 @@ import { Restaurant } from '../interface/restaurant';
 import { RESTAURANTS } from '../mock-data/mock-restaurants';
 
 import { Observable, of } from 'rxjs';
-import { SearchService } from './search.service';
 
 import Swal from 'sweetalert2';
 
@@ -13,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class RestaurantService {
 
-  constructor(private searchService: SearchService) { }
+  constructor() { }
 
   getRestaurants(): Observable<Restaurant[]> {
     const restaurants = of(RESTAURANTS);
@@ -29,5 +28,5 @@ export class RestaurantService {
     })
   }
 
-  
+
 }

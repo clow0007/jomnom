@@ -15,7 +15,7 @@
 </div>
 <div class="row mb-5">
   <div class="col-6 mb-2" *ngFor="let restaurant of restaurants | filter:searchTerm">
-    <div class="card" style="margin: 2px">
+    <div class="card" style="margin: 2px; cursor: pointer" (click)="restaurantService.chooseRestaurant(restaurant)">
       <img [src]="restaurant.image" class="card-img-top" style="height: 90px; object-fit: cover">
       <div class="card-body">
         <h6 class="card-title" style="font-weight: bold">
@@ -33,8 +33,6 @@
             <i class="bi bi-star-fill"></i>
           </div>
         </div>
-
-        <a href="#" class="stretched-link" (click)="restaurantService.chooseRestaurant(restaurant)"></a>
       </div>
     </div>
   </div>
@@ -44,25 +42,7 @@
 <!--<button class="btn btn-lg btn-outline-primary" (click)="openRaffle()">Raffle</button>-->
 <!--<button class="btn btn-lg btn-outline-primary" (click)="navigate()">Food Challenge</button>-->
 
-<!--<ngx-wheel #wheel-->
-<!--  width='600'-->
-<!--  height='600'-->
-<!--  spinDuration='8'-->
-<!--  [disableSpinOnClick]='true'-->
-<!--  [items]='items'-->
-<!--  [innerRadius]='50'-->
-<!--  [spinAmount]='10'-->
-<!--  pointerStrokeColor='red'-->
-<!--  pointerFillColor='purple'-->
-<!--  [idToLandOn]='idToLandOn'-->
-<!--  (onSpinStart)='before()'-->
-<!--  (onSpinComplete)='after()'-->
-<!--&gt;-->
-<!--</ngx-wheel>-->
-<!--<div>-->
-<!--  <button (click)="wheel.spin()">Raffle it!</button>-->
-<!--  <button (click)="[resetButton(),wheel.reset()]">Reset</button>-->
-<!--</div>-->
+
 <!-- <div class="card">
   <img src="../../../assets/restaurant_1.jpg" style="height: 65px">
   <div class="card-body">

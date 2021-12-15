@@ -35,10 +35,10 @@ export class MapComponent implements OnInit {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           };
-          this.apiService.fetchNearby(this.position.lat, this.position.lng).
-          subscribe(response =>{
-            console.log(response);
-          });
+          // this.apiService.fetchNearby(this.position.lat, this.position.lng).
+          // subscribe(response =>{
+          //   console.log(response);
+          // });
           this.infoWindow.setPosition(this.position);
           this.infoWindow.setContent("Location found.");
           this.infoWindow.open(this.map);
