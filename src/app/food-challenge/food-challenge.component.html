@@ -5,7 +5,7 @@
     <div class="col-4 mb-3" *ngFor="let foodChallenge of foodChallenges">
       <div class="card" style="margin: 5px" (click)="foodChallengeService.chooseChallenge(foodChallenge)">
         <div class="card-body">
-          <h5 class="card-title">
+          <h5 class="card-title" style="font-weight: bold;">
             {{foodChallenge.name}}
           </h5>
           <h6 class="card-subtitle mb-2 text-muted">
