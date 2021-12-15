@@ -1,13 +1,19 @@
 <app-header></app-header>
 
-<div *ngFor="let foodChallenge of foodChallenges " class="card" style="width: 30%; margin: 20px" (click)="foodChallengeService.chooseChallenge(foodChallenge)">
-  <div class="card-body">
-    <h5 class="card-title">
-      {{foodChallenge.name}}
-    </h5>
-    <h6 class="card-subtitle mb-2 text-muted">
-      Reward Points: {{foodChallenge.reward}}
-    </h6>
+<div class="container-fluid h-100">
+  <div class="row mb-5">
+    <div class="col-4 mb-3" *ngFor="let foodChallenge of foodChallenges">
+      <div class="card" style="margin: 5px" (click)="foodChallengeService.chooseChallenge(foodChallenge)">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{foodChallenge.name}}
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Reward Points: {{foodChallenge.reward}}
+          </h6>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
  

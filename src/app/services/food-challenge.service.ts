@@ -30,6 +30,14 @@ export class FoodChallengeService {
       focusConfirm: false,
       confirmButtonText:
         'Accept',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Accepted',
+          'You have chosen this challenge.',
+          'success'
+        )
+      } 
     })
     
   }
