@@ -5,7 +5,7 @@ export const FOODCHALLENGES: FoodChallenge[] = [
   {name: 'Korean Wave', description: 'Order any Korean meal set from any Korean themed restaurants', details: 'Spend at least RM30', reward: 50},
   {name: '1 Malaysia', description: 'Order at least 2 different types of Malaysian cuisine', details: 'Only Malaysian food', reward: 50},
   {name: 'Leave your mark', description: 'Review 10 restaurants', details: '', reward: 100},
-  {name: 'Religioversity', description: 'Eat at a restaurant different from your own faith', details: '', reward: 10},
+  {name: 'Diversify in Paradise', description: 'Eat at a restaurant different from your own faith or race', details: '', reward: 30},
   {name: 'Fast and Quick', description: 'Eat fast food cuisine for a week', details: 'Fast food at any restaurants is allowed', reward: 200},
   {name: 'Affluent, Opulent, Grandiose', description: 'Eat at fine dining restaurants for a week', details: 'Spend a minimum of RM300 at each meal', reward: 1500},
   {name: 'Pearl of the Far East', description: 'Eat East Asian cuisine 10 times', details: 'Chinese, Japanese, Korean, Mongolian Food', reward: 300},
